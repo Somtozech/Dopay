@@ -35,8 +35,8 @@ contract Oracle is Ownable {
         require(hash == pendingRequests[_id], "Params dosen't match");
         delete pendingRequests[_id];
 
-        __callback(_data);
+        callback(_data);
     }
 
-    function __callback(bytes32 _data) public virtual {}
+    function callback(bytes32 _data) public virtual {}
 }
