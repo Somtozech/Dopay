@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 import "@openzeppelin/contracts/access/Ownable.sol";
 
@@ -28,7 +29,7 @@ contract Oracle is Ownable {
         uint256 _id,
         address _sender,
         uint256 _expiration,
-        bytes32 _data
+        uint256 _data
     ) public onlyOwner {
         bytes32 hash = keccak256(abi.encodePacked(_id, _sender, _expiration));
 
@@ -38,5 +39,7 @@ contract Oracle is Ownable {
         callback(_data);
     }
 
-    function callback(bytes32 _data) internal virtual {}
+    function callback(uint256 _data) internal virtual returns (uint256) {
+        return _data;
+    }
 }
