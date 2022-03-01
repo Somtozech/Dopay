@@ -4,6 +4,7 @@
   "main": "index.js",
   "repository": "https://github.com/Somtozech/dopay.git",
   "author": "Somtozech <ezechinnaemeka@gmail.com>",
+  "description": "This project demonstrates how to build an oracle, aggregator and ERC20 Token contract",
   "license": "MIT",
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.0",
