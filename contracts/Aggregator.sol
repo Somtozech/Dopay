@@ -4,10 +4,10 @@ import "./Oracle.sol";
 contract Aggregator is Oracle {
     uint256 public ethPriceUSD;
 
-    function callback(uint256 _price) public override {
+    function callback(uint256 _price) internal override {
         ethPriceUSD = _price;
     }
 
-    function getLatestPrice() public returns (uint256) {
+    function getLatestPrice() external view returns (uint256) {
         return ethPriceUSD;
 }

@@ -38,5 +38,5 @@ contract Oracle is Ownable {
         callback(_data);
     }
 
-    function callback(bytes32 _data) public virtual {}
+    function callback(bytes32 _data) internal virtual {}
 }
